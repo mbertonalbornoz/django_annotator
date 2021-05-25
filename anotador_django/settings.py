@@ -127,7 +127,10 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-ALLOWED_HOSTS = [".herokuapp.com"]
+ALLOWED_HOSTS = [
+    "localhost",
+    ".herokuapp.com",
+]
 
 # # Activate Django-Heroku.
 # django_heroku.settings(locals())
