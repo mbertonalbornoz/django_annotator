@@ -1,0 +1,1 @@
+web: gunicorn anotador_django.wsgi --log-file -
