@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "anotador_django.urls"
@@ -132,5 +133,5 @@ ALLOWED_HOSTS = [
     ".herokuapp.com",
 ]
 
-# # Activate Django-Heroku.
-# django_heroku.settings(locals())
+STATICFILES_STORATE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+

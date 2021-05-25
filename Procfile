@@ -1,1 +1,1 @@
-web: gunicorn anotador_django:web --log-file -
+web: gunicorn anotador_django.wsgi --log-file -
