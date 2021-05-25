@@ -1,5 +1,3 @@
-import datetime
-
 from django.shortcuts import render, redirect
 from .models import Tarea
 from .forms import TareaModelForm
