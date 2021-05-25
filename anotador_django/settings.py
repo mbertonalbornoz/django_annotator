@@ -10,8 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
-
-# import django_heroku
+import django_heroku
 
 
 from pathlib import Path
@@ -135,3 +134,5 @@ ALLOWED_HOSTS = [
 
 STATICFILES_STORATE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())
