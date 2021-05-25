@@ -34,4 +34,4 @@ def borrar_tarea(request, pk):
 
     Tarea.objects.filter(id=pk).delete()
 
-    return redirect("/web/")
+    return redirect("/")
