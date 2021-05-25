@@ -22,12 +22,7 @@ def crear_tarea(request):
         form.save()
         form = TareaModelForm()
 
-    context = {
-        "tareas": Tarea.objects.all(),
-        "form": form,
-    }
-
-    return render(request, "web/index.html", context=context)
+    return redirect("/")
 
 
 def borrar_tarea(request, pk):
