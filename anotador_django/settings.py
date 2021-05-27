@@ -119,6 +119,8 @@ STATIC_URL = "web/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "web/static/")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "web/static/"),
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "web/static"),
 ]
 
 # Default primary key field type
