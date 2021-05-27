@@ -17,3 +17,15 @@ class TareaModelForm(forms.ModelForm):
             "dia",
             "hora",
         ]
+
+        widgets = {
+            "tarea": forms.TextInput(
+                attrs={"class": "form-control", "class": "col-md-4",}
+            ),
+            "dia": forms.TextInput(
+                attrs={"class": "form-control", "class": "col-md-4",}
+            ),
+            "hora": forms.TextInput(
+                attrs={"class": "form-control", "class": "col-md-4",}
+            ),
+        }

@@ -1,11 +1,12 @@
+import datetime
+
 from django.db import models
-from django.utils import timezone
 
 
 # Create your models here.
 class Tarea(models.Model):
     tarea = models.CharField(max_length=140)
-    dia = models.DateField(default=timezone.now)
+    dia = models.DateField(default=datetime.date.today)
     hora = models.TimeField()
 
     def __str__(self):

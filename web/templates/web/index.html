@@ -9,10 +9,10 @@
 
 <!-- prettier-ignore -->
 <form action="{% url 'web:crear_tarea' %}" method="POST">{% csrf_token %}
-
+  
   {{ form.as_p }}
-
   <p><input class="btn btn-primary" type="submit" value="Crear tarea" /></p>
+
 </form>
 
 {% if tareas %}
