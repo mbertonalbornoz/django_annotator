@@ -132,7 +132,7 @@ ALLOWED_HOSTS = [
     ".herokuapp.com",
 ]
 
-STATICFILES_STORATE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
