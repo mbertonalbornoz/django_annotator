@@ -8,13 +8,18 @@
 <h1>Anotador-Django</h1>
 
 <!-- prettier-ignore -->
-<form action="{% url 'web:crear_tarea' %}" method="POST">{% csrf_token %}
-  
-  {{ form.as_p }}
-  <p><input class="btn btn-primary" type="submit" value="Crear tarea" /></p>
+<div class="row justify-content-center">  
+  <div class="col-md-6">
+    <div class="form-group"></div>
+      <form action="{% url 'web:crear_tarea' %}" method="POST">{% csrf_token %}
+        
+        {{ form.as_p }}
+        <p><input class="btn btn-primary" type="submit" value="Crear tarea" /></p>
 
-</form>
-
+      </form>
+    </div>
+  </div>
+</div>
 {% if tareas %}
 <hr />
 
