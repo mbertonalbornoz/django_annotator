@@ -1,30 +1,31 @@
 from django.shortcuts import render, redirect
-from .models import Tarea
-from .forms import TareaModelForm
+from .models import Task
+from .forms import TaskModelForm
+
 
 # Create your views here.
 def home(request):
-    form = TareaModelForm()
+    form = TaskModelForm()
     context = {
-        "tareas": Tarea.objects.all(),
+        "tasks": Task.objects.all(),
         "form": form,
     }
     return render(request, template_name="web/index.html", context=context)
 
 
-def crear_tarea(request):
+def create_task(request):
 
-    form = TareaModelForm(request.POST or None)
+    form = TaskModelForm(request.POST or None)
 
     if form.is_valid():
         form.save()
-        form = TareaModelForm()
+        form = TaskModelForm()
 
     return redirect("/")
 
 
-def borrar_tarea(request, pk):
+def delete_task(request, pk):
 
-    Tarea.objects.filter(id=pk).delete()
+    Task.objects.filter(id=pk).delete()
 
     return redirect("/")

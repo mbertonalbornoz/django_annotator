@@ -1,59 +1,58 @@
 <!-- prettier-ignore -->
-{% extends 'web/base.html' %} 
+{% extends 'web/base.html' %}
 
-{% block title %}Anotador en Django{% endblock %}
+{% block title %}Django-Annotator{% endblock %}
 
 {% block content %}
 
-<h1>Anotador-Django</h1>
+    <h1>Django-Annotator</h1>
 
-<!-- prettier-ignore -->
-<div class="row justify-content-center">  
-  <div class="col-md-6">
-    <div class="form-group"></div>
-      <form action="{% url 'web:crear_tarea' %}" method="POST">{% csrf_token %}
-        
-        {{ form.as_p }}
-        <p><input class="btn btn-primary" type="submit" value="Crear tarea" /></p>
+    <!-- prettier-ignore -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="form-group"></div>
+            <form action="{% url 'web:create_task' %}" method="POST">{% csrf_token %}
 
-      </form>
+                {{ form.as_p }}
+                <p><input class="btn btn-primary" type="submit" value="Create task"/></p>
+
+            </form>
+        </div>
     </div>
-  </div>
-</div>
-{% if tareas %}
-<hr />
+    {% if tasks %}
+        <hr/>
 
-<div class="table-responsive-md">
-  <table class="table">
-    <thead>
-      <tr class="text-center">
-        <th scope="col">id</th>
-        <th scope="col">Tarea</th>
-        <th scope="col">Día</th>
-        <th scope="col">Hora</th>
-        <th scope="col">Borrar</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for tarea in tareas %}
-      <tr class="text-center">
-        <th scope="row">{{ tarea.id }}</th>
-        <td style="word-wrap: break-word">{{ tarea.tarea }}</td>
-        <td>{{ tarea.dia }}</td>
-        <td>{{ tarea.hora }}</td>
-        <td>
-          <!-- prettier-ignore -->
-          <form action="{% url 'web:borrar_tarea' tarea.id %}" method="POST">{% csrf_token %}
-            <input class="btn btn-danger" type="submit" value="Borrar tarea" />
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-<!-- prettier-ignore -->
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                <tr class="text-center">
+                    <th scope="col">id</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for task in tasks %}
+                    <tr class="text-center">
+                        <th scope="row">{{ task.id }}</th>
+                        <td style="word-wrap: break-word">{{ task.task }}</td>
+                        <td>{{ task.date }}</td>
+                        <td>{{ task.time }}</td>
+                        <td>
+                            <!-- prettier-ignore -->
+                            <form action="{% url 'web:delete_task' task.id %}" method="POST">{% csrf_token %}
+                                <input class="btn btn-danger" type="submit" value="Delete task"/>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- prettier-ignore -->
 
-{% endif %} 
+    {% endif %}
 
 {% endblock %}

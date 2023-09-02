@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 
 from . import views
 
@@ -6,6 +6,6 @@ app_name = "web"
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("crear_tarea/", views.crear_tarea, name="crear_tarea"),
-    path("borrar_tarea/<int:pk>", views.borrar_tarea, name="borrar_tarea"),
+    path("create_task/", views.create_task, name="create_task"),
+    path("delete_task/<int:pk>", views.delete_task, name="delete_task"),
 ]
